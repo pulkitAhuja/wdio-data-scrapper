@@ -48,7 +48,7 @@ describe('Data-Scraping', () => {
                     pdfParseFixed(dataBuffer).then(function (data) {
                         try {
                             let txtFile = "scrappedData/scrappedPdfs/scrapped-" + name + ".txt";
-                            fs.appendFile(txtFile, data.text, function (err) {
+                            fs.writeFileSync(txtFile, data.text, function (err) {
                                 if (err) throw err;
                                 console.log('Saved!');
                             });

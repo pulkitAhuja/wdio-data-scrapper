@@ -25,7 +25,7 @@ describe('Data-Scraping', () => {
                 let txtFile = "scrappedData/" + name + ".txt";
                 console.log('Total Files Created as of now => |'+ x + "| " + txtFile);
                 // @ts-ignore
-                fs.appendFile(txtFile, contents, function (err) {
+                fs.writeFileSync(txtFile, contents, function (err) {
                     if (err) throw err;
                     console.log('Saved!');
                 });
