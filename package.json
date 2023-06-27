@@ -23,11 +23,14 @@
   },
   "scripts": {
     "test": "wdio run wdio.sauce.conf.ts",
-    "test:local": "wdio run wdio.local.conf.ts",
+    "test:local:RunsEverything": "wdio run wdio.local.conf.ts",
+    "test:local:RunsDataScrapper": "wdio run wdio.local.conf.ts --suite Scrapper",
+    "test:local:RunsPdfExtractor": "wdio run wdio.local.conf.ts --suite PdfExtractor",
     "test:sauce": "wdio run wdio.sauce.conf.ts"
   },
   "devDependencies": {
     "@types/jasmine": "^4.3.1",
+    "@types/pdf-parse": "^1.1.1",
     "@wdio/cli": "^8.8.8",
     "@wdio/globals": "^8.8.8",
     "@wdio/jasmine-framework": "^8.8.8",
@@ -43,5 +46,8 @@
     "typescript": "^5.0.4",
     "wdio-chromedriver-service": "^8.1.1",
     "webdriverio": "^8.8.8"
+  },
+  "dependencies": {
+    "@cyber2024/pdf-parse-fixed": "^1.2.5"
   }
 }

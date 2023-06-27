@@ -21,6 +21,10 @@ export const config: Omit<WebdriverIO.Config, 'capabilities'> = {
     // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
+    suites: {
+        Scrapper: ['./test/specs/DataScrapping.spec.ts'],
+        PdfExtractor: ['./test/specs/PdfExtractor.spec.ts'],
+    },
     specs: [
         './test/specs/**/*.ts'
     ],
